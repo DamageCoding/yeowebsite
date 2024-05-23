@@ -14,34 +14,24 @@
             padding: 0;
             background-color: #f0f2f5;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
 
         .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-
-        p {
-            font-size: 1.2rem;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 30px;
         }
 
         .profile {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
         }
 
         .profile .avatar {
@@ -53,6 +43,18 @@
 
         .profile .username {
             font-weight: bold;
+            color: #007bff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
         .btn-container {
@@ -85,33 +87,67 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .btn i {
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .stat {
+            flex: 1;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .stat i {
             margin-right: 8px;
         }
 
         @media only screen and (max-width: 600px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile {
+                margin-bottom: 10px;
+            }
+
             h1 {
                 font-size: 2.5rem;
             }
 
-            .btn {
-                padding: 12px 24px;
-                font-size: 1rem;
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat {
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div id="profile" class="profile">
-            <img src="default-avatar.png" alt="Profile Picture" class="avatar">
-            <span class="username">Guest</span>
+        <div class="header">
+            <h1>Welcome to Yeo</h1>
+            <div class="profile">
+                <img src="default-avatar.png" alt="Profile Picture" class="avatar">
+                <span class="username">Guest</span>
+            </div>
         </div>
-        <h1>Welcome to Yeo</h1>
         <p>Join our vibrant community now!</p>
         <div class="btn-container">
             <a href="#" onclick="loginWithDiscord()" class="btn"><i class="fas fa-server"></i> Join Server</a>
-            <!-- Remove the direct link to Telegram -->
+            <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
         </div>
         <div class="stats">
             <div class="stat"><i class="fas fa-users"></i> Over 10,000 Users Spammed</div>
@@ -128,10 +164,8 @@
 
         // Function to update profile information after successful login
         function updateProfile(username, avatarURL) {
-            document.getElementById('profile').innerHTML = `
-                <img src="${avatarURL}" alt="Profile Picture" class="avatar">
-                <span class="username">${username}</span>
-            `;
+            document.querySelector('.username').innerText = username;
+            document.querySelector('.avatar').src = avatarURL;
         }
     </script>
 </body>
