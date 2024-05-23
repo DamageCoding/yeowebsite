@@ -8,74 +8,59 @@
     <!-- Add the link tag for the favicon.ico -->
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #f9fafb;
             color: #333;
         }
-
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        /* Header Styles */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
         }
-
         .profile {
             display: flex;
             align-items: center;
             cursor: pointer;
+            text-decoration: none;
         }
-
         .profile .avatar {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-right: 10px;
+            object-fit: cover;
         }
-
         .profile .username {
             font-weight: bold;
             color: #007bff;
+            text-transform: uppercase;
         }
-
-        .dropdown-content {
-            display: block;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            padding: 10px;
-            border-radius: 5px;
-            right: 0;
-            top: 60px;
-        }
-
-        .dropdown-item {
-            padding: 8px 0;
-            cursor: pointer;
-        }
-
+        /* Main Content Styles */
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: #007bff;
+            text-align: center;
         }
-
         p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            text-align: center;
         }
-
         .btn-container {
             display: flex;
             justify-content: center;
@@ -83,7 +68,6 @@
             gap: 20px;
             margin-top: 30px;
         }
-
         .btn {
             display: inline-block;
             padding: 15px 30px;
@@ -99,19 +83,17 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             outline: none;
         }
-
         .btn:hover {
             background-color: #218838;
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
-
+        /* Stats Styles */
         .stats {
             display: flex;
             justify-content: space-between;
             margin-top: 40px;
         }
-
         .stat {
             flex: 1;
             padding: 20px;
@@ -122,35 +104,30 @@
             transition: all 0.3s ease-in-out;
             text-align: center;
         }
-
         .stat i {
             margin-right: 8px;
         }
-
-        @media only screen and (max-width: 600px) {
+        /* Responsive Styles */
+        @media only screen and (max-width: 768px) {
             .container {
-                padding: 20px 10px;
+                padding: 20px;
             }
-
             .header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
-
-            .profile {
-                margin-bottom: 10px;
+            .profile .avatar {
+                width: 30px;
+                height: 30px;
             }
-
             h1 {
                 font-size: 2.5rem;
             }
-
-            .stats {
+            .btn-container {
                 flex-direction: column;
             }
-
-            .stat {
-                margin-bottom: 20px;
+            .btn {
+                padding: 12px 24px;
             }
         }
     </style>
@@ -159,14 +136,14 @@
     <div class="container">
         <div class="header">
             <h1>Welcome to Yeo</h1>
-            <div class="profile" onclick="loginWithDiscord()">
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1243346396267151411&redirect_uri=https://yeo.touchgrass.cloud&response_type=code&scope=identify" class="profile">
                 <img src="https://discord.com/assets/6debd47ed13483642cf09e832ed0bc1b.png" alt="Profile Picture" class="avatar">
-                <span class="username">Login with Discord</span>
-            </div>
+                <span class="username">Guest</span>
+            </a>
         </div>
         <p>Join our vibrant community now!</p>
         <div class="btn-container">
-            <a href="#" onclick="loginWithDiscord()" class="btn"><i class="fas fa-server"></i> Join Server</a>
+            <a href="#" class="btn"><i class="fas fa-server"></i> Join Server</a>
             <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
         </div>
         <div class="stats">
@@ -175,18 +152,6 @@
             <div class="stat"><i class="fas fa-star"></i><br> The Best Owners</div>
         </div>
     </div>
-
-    <script>
-        function loginWithDiscord() {
-            // Redirect the user to Discord's authorization endpoint
-            window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=1243346396267151411&redirect_uri=https://yeo.touchgrass.cloud&response_type=code&scope=identify';
-        }
-
-        // Function to update profile information after successful login
-        function updateProfile(username, avatarURL) {
-            document.querySelector('.username').innerText = username;
-            document.querySelector('.avatar').src = avatarURL;
-        }
-    </script>
 </body>
 </html>
+
