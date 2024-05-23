@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Yeo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Add the link tag for the favicon.ico -->
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* Global Styles */
@@ -18,31 +17,28 @@
             padding: 0;
             background-color: #f9fafb;
             color: #333;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
         /* Header Styles */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
             margin-bottom: 30px;
         }
         .profile {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
             text-decoration: none;
         }
         .profile .avatar {
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 20px;
             object-fit: cover;
+            vertical-align: middle;
         }
         .profile .username {
             font-weight: bold;
@@ -54,18 +50,13 @@
             font-size: 3rem;
             margin-bottom: 20px;
             color: #007bff;
-            text-align: center;
         }
         p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            text-align: center;
         }
         .btn-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            text-align: center;
             margin-top: 30px;
         }
         .btn {
@@ -91,7 +82,7 @@
         /* Stats Styles */
         .stats {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 40px;
         }
         .stat {
@@ -110,21 +101,18 @@
         /* Responsive Styles */
         @media only screen and (max-width: 768px) {
             .container {
-                padding: 20px;
-            }
-            .header {
-                flex-direction: column;
-                align-items: center;
+                padding: 10px;
             }
             .profile .avatar {
-                width: 30px;
-                height: 30px;
+                width: 60px;
+                height: 60px;
+                margin-right: 10px;
             }
             h1 {
                 font-size: 2.5rem;
             }
             .btn-container {
-                flex-direction: column;
+                margin-top: 20px;
             }
             .btn {
                 padding: 12px 24px;
@@ -136,15 +124,15 @@
     <div class="container">
         <div class="header">
             <h1>Welcome to Yeo</h1>
-            <a href="https://discord.com/api/oauth2/authorize?client_id=1243346396267151411&redirect_uri=https://yeo.touchgrass.cloud&response_type=code&scope=identify" class="profile">
-                <img src="https://discord.com/assets/6debd47ed13483642cf09e832ed0bc1b.png" alt="Profile Picture" class="avatar">
-                <span class="username">Guest</span>
+            <a href="#" class="profile" id="profileLink">
+                <i class="fab fa-discord avatar" id="profileAvatar"></i>
+                <span class="username" id="username">Guest</span>
             </a>
         </div>
         <p>Join our vibrant community now!</p>
         <div class="btn-container">
             <a href="#" class="btn"><i class="fas fa-server"></i> Join Server</a>
-            <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
+            <a href="#" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
         </div>
         <div class="stats">
             <div class="stat"><i class="fas fa-users"></i><br> Over 10,000 Users Spammed</div>
@@ -152,6 +140,26 @@
             <div class="stat"><i class="fas fa-star"></i><br> The Best Owners</div>
         </div>
     </div>
+
+    <script>
+        // Function to update profile information after successful login
+        function updateProfile(username, avatarURL) {
+            document.getElementById('username').innerText = username;
+            document.getElementById('profileAvatar').style.backgroundImage = `url(${avatarURL})`;
+        }
+
+        // Example of how you might use this function after a successful login
+        // You can replace these values with actual user data obtained after login
+        const loggedInUser = {
+            username: 'John Doe',
+            avatarURL: 'https://discord.com/assets/6debd47ed13483642cf09e832ed0bc1b.png'
+        };
+
+        // Simulate a login event and update the profile
+        document.getElementById('profileLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default behavior of link
+            updateProfile(loggedInUser.username, loggedInUser.avatarURL);
+        });
+    </script>
 </body>
 </html>
-
