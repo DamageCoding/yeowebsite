@@ -6,7 +6,7 @@
     <title>Welcome to Yeo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Add the link tag for the favicon.ico -->
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +30,8 @@
         }
 
         .profile {
-            position: relative;
+            display: flex;
+            align-items: center;
             cursor: pointer;
         }
 
@@ -47,7 +48,7 @@
         }
 
         .dropdown-content {
-            display: none;
+            display: block;
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
@@ -57,10 +58,6 @@
             border-radius: 5px;
             right: 0;
             top: 60px;
-        }
-
-        .profile:hover .dropdown-content {
-            display: block;
         }
 
         .dropdown-item {
@@ -162,14 +159,9 @@
     <div class="container">
         <div class="header">
             <h1>Welcome to Yeo</h1>
-            <div class="profile">
-                <img src="default-avatar.png" alt="Profile Picture" class="avatar">
-                <span class="username">Guest</span>
-                <div class="dropdown-content">
-                    <div class="dropdown-item" onclick="loginWithDiscord()">
-                        <i class="fab fa-discord"></i> Login with Discord
-                    </div>
-                </div>
+            <div class="profile" onclick="loginWithDiscord()">
+                <img src="https://discord.com/assets/6debd47ed13483642cf09e832ed0bc1b.png" alt="Profile Picture" class="avatar">
+                <span class="username">Login with Discord</span>
             </div>
         </div>
         <p>Join our vibrant community now!</p>
