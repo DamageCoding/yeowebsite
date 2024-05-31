@@ -13,63 +13,37 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #000428, #004e92);
-            color: #ffffff;
-            min-height: 100vh;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .container {
-            text-align: center;
-            max-width: 900px;
-            padding: 50px 30px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        .box {
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            color: #FFD700;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #333;
         }
 
         p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            color: #e0e0e0;
-            line-height: 1.8;
-        }
-
-        .box {
-            background: #111;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .box h2 {
-            color: #FFD700;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #666;
         }
 
         .stats {
@@ -84,23 +58,23 @@
         .stat {
             flex: 1 1 calc(30% - 20px);
             padding: 30px;
-            background-color: #FFD700;
-            color: #000;
+            background-color: #fff;
+            color: #333;
             border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease-in-out;
             text-align: center;
         }
 
         .stat:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .stat i {
             margin-bottom: 15px;
             font-size: 3rem;
-            color: #111;
+            color: #FFD700;
         }
 
         .stat span {
@@ -108,7 +82,7 @@
             margin-top: 15px;
             font-size: 1.8rem;
             font-weight: 600;
-            color: #111;
+            color: #333;
         }
 
         .btn-container {
@@ -129,16 +103,16 @@
             border-radius: 50px;
             transition: all 0.3s ease-in-out;
             text-transform: uppercase;
-            background-color: #28a745;
-            color: #ffffff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #FFD700;
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             outline: none;
         }
 
         .btn:hover {
-            background-color: #218838;
+            background-color: #f9c107;
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .btn i {
@@ -147,7 +121,7 @@
 
         @media only screen and (max-width: 600px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .stat {
@@ -172,37 +146,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Yeo</h1>
-        <p>#1 Spammer!</p>
-        <div class="btn-container">
-            <a href="http://yeodiscord.touchgrass.cloud/" class="btn"><i class="fas fa-server"></i> Join Server</a>
-            <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
-        </div>
         <div class="box">
-<h2>Stats</h2>
-<div class="stats">
-    <div class="stat">
-        <i class="fas fa-users"></i>
-        <span>Over 10,000 Members</span>
+            <h1>Yeo</h1>
+            <p>#1 Spammer!</p>
+            <div class="btn-container">
+                <a href="http://yeodiscord.touchgrass.cloud/" class="btn"><i class="fas fa-server"></i> Join Server</a>
+                <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span>Over 10,000 Members</span>
+                </div>
+                <div class="stat">
+                    <i class="fasfa-comments"></i>
+                    <span>1,000,000+ Messages</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span>Top-Rated Community</span>
+                </div>
+            </div>
+            <div class="box video-container">
+                <h2>Watch the Tutorial</h2>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-    <div class="stat">
-        <i class="fas fa-comments"></i>
-        <span>1,000,000+ Messages</span>
-    </div>
-    <div class="stat">
-        <i class="fas fa-star"></i>
-        <span>Top-Rated Community</span>
-    </div>
-</div>
-</div>
-<div class="box">
-    <h2>Status</h2>
-    <p>All systems are operational.</p>
-</div>
-<div class="box video-container">
-    <h2>Watch the Tutorial</h2>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-</div>
-</div>
 </body>
 </html>
