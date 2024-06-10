@@ -2,97 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Yeo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeo - Elevate Your Spamming Game</title>
     <link rel="icon" href="https://media.discordapp.net/attachments/1243315024328654898/1243335846417924158/New_Project_4.png?ex=665a54bd&is=6659033d&hm=fdf930bdea130a3b0cf58c7ef4fe82f942937d58a18c1c004ea9cb39fc661b8a&=&format=webp&quality=lossless&width=420&height=420" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* Reset and General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
+            background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
 
+        /* Container Styles */
         .container {
-            text-align: center;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
+        /* Main Box Styles */
         .box {
-            width: 90%;
-            max-width: 800px;
-            background: #fff;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
         }
 
+        /* Heading Styles */
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: #333;
+            text-shadow: 0 0 20px #000;
+            animation: glow 2s infinite alternate;
         }
 
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #000, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            }
+            to {
+                text-shadow: 0 0 20px #000, 0 0 40px #FFD700, 0 0 60px #FFD700;
+            }
+        }
+
+        /* Subheading Styles */
         p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             color: #666;
         }
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat {
-            flex: 1 1 calc(30% - 20px);
-            padding: 30px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease-in-out;
-            text-align: center;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .stat i {
-            margin-bottom: 15px;
-            font-size: 3rem;
-            color: #FFD700;
-        }
-
-        .stat span {
-            display: block;
-            margin-top: 15px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
+        /* Button Styles */
         .btn {
             display: inline-block;
             padding: 20px 50px;
@@ -107,6 +78,11 @@
             color: #333;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             outline: none;
+            margin-right: 20px;
+        }
+
+        .btn:last-child {
+            margin-right: 0;
         }
 
         .btn:hover {
@@ -115,32 +91,79 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
-        .btn i {
-            margin-right: 10px;
+        /* Stats Styles */
+        .stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
+        .stat {
+            flex: 1 1 300px;
+            padding: 30px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-            .stat {
-                flex: 1 1 calc(100% - 20px);
-            }
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
 
-            .btn {
-                padding: 15px 40px;
-                font-size: 1.2rem;
-            }
+        .stat i {
+            font-size: 3rem;
+            color: #FFD700;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%; /* Responsive width */
+            max-width: 800px; /* Limit width for larger screens */
+            height: 0;
+            padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+            margin: 0 auto;
         }
 
         .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 315px;
+            height: 100%;
             border: none;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
+            transition: transform 0.5s;
+            border-radius: 20px; /* Rounded corners */
+        }
+
+        .video-container:hover iframe {
+            transform: scale(1.05);
+        }
+
+        @media only screen and (max-width: 768px) {
+            .stat {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
@@ -148,7 +171,7 @@
     <div class="container">
         <div class="box">
             <h1>Yeo</h1>
-            <p>#1 Spammer!</p>
+            <p>#1 Spammer in Town!</p>
             <div class="btn-container">
                 <a href="http://yeodiscord.touchgrass.cloud/" class="btn"><i class="fas fa-server"></i> Join Server</a>
                 <a href="https://t.me/yeodiscord" class="btn"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
@@ -156,19 +179,18 @@
             <div class="stats">
                 <div class="stat">
                     <i class="fas fa-users"></i>
-                    <span>Over 10,000 People Spammed.</span>
+                    <span>Over 10,000 People Spammed</span>
                 </div>
                 <div class="stat">
                     <i class="fas fa-comments"></i>
-                    <span>1,000,000+ Messages Sent.</span>
+                    <span>1,000,000+ Messages Sent</span>
                 </div>
                 <div class="stat">
                     <i class="fas fa-star"></i>
                     <span>The Best Spamming Server</span>
                 </div>
             </div>
-            <div class="box video-container">
-                <h2>Watch the Tutorial</h2>
+            <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/oqfsUp7DHe4" allowfullscreen></iframe>
             </div>
         </div>
